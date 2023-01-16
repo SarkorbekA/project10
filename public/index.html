@@ -9,11 +9,6 @@
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
-  <style>
-    body.active {
-      overflow: hidden;
-    }
-  </style>
 </head>
 
 <body>
@@ -23,27 +18,6 @@
   </noscript>
   <div id="app"></div>
   <!-- built files will be auto injected -->
-  <script>
-    const b = document.querySelector('.button__box')
-    const body = document.querySelector('body')
-    b.addEventListener('click', () => {
-      body.classList.add('active')
-    })
-
-    const exit = document.querySelector('.exit .my-button')
-    exit.addEventListener('click', () => {
-      c.classList.remove('active')
-      body.classList.remove('active')
-      filter.classList.remove('active')
-    })
-
-    filter.addEventListener('click', () => {
-      c.classList.remove('active')
-      body.classList.remove('active')
-      filter.classList.remove('active')
-    })
-
-  </script>
 </body>
 
 </html>
