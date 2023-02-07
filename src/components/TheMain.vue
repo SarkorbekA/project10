@@ -35,10 +35,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 40px;
   h1 {
     text-align: center;
-    font-size: 30px;
+    font-size: 36px;
     color: white;
     text-shadow: 0 0 15px #fff, 0 0 30px rgb(75, 255, 26), 0 0 75px #49ff18,
       27px -9px 15px rgba(206, 89, 55, 0);
@@ -55,16 +55,16 @@ main {
   justify-content: center;
   align-content: flex-end;
   width: 100%;
-  max-width: 250px;
-  padding: 20px 10px;
-  background: rgba(255, 215, 0, 0.9);
-  box-shadow: 7px 8px 25px 2px rgba(75, 255, 26, 0.6);
+  max-width: 300px;
+  padding: 35px 10px;
+  background: rgb(255, 215, 0);
+  box-shadow: -10px -10px 50px 4px rgba(75, 255, 26, 0.9);
   backdrop-filter: blur(1px);
   -webkit-backdrop-filter: blur(1px);
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   img {
-    width: 160px;
+    width: 180px;
   }
   @media (max-width:400px) {
     box-shadow: none;

@@ -1,11 +1,7 @@
-  <template>
+<template>
   <div class="overflow">
     <header>
-      <div
-        class="filter"
-        :class="{ active: this.class }"
-        @click="this.class = false"
-      ></div>
+      <div class="filter" :class="{ active: this.class }" @click="this.class = false"></div>
       <ul class="burger__nav" :class="{ active: this.class }">
         <div class="exit">
           <div class="my-button" @click="this.class = false">
@@ -72,6 +68,13 @@ export default {
       class: false,
     };
   },
+  mounted() {
+    // this.$nextTick(() => {
+      if (this.class) {
+        document.body.classList.add('overflow');
+      }
+    // })
+  }
 };
 </script>
 
@@ -87,11 +90,14 @@ export default {
   list-style: none;
 }
 
+
+
 .container {
   padding: 0px 12px;
   margin: 0 auto;
   max-width: 1200px;
 }
+
 .overflow {
   overflow: hidden;
 }
@@ -102,14 +108,13 @@ header {
   position: relative;
   z-index: 10;
 }
+
 .header {
   width: 100%;
   position: absolute;
   z-index: 2;
-  background: rgba(255, 215, 0, 0.9);
+  background: rgb(255, 215, 0);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 2);
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
   padding: 10px 0px;
   border-bottom: 2px dashed #398c16;
 }
@@ -143,9 +148,11 @@ header {
   max-width: 50vw;
   overflow: hidden;
   transition: 2s;
+
   @media (max-width: 400px) {
     max-width: 100vw;
   }
+
   .items {
     width: 100%;
     display: flex;
@@ -153,8 +160,10 @@ header {
     margin-top: 10px;
     flex-direction: column;
   }
+
   li {
     padding: 10px 0px;
+
     a {
       font-size: 24px;
       color: rgb(176, 176, 176);
@@ -174,12 +183,15 @@ header {
 .logo {
   font-size: 28px;
   line-height: 30px;
+
   a {
     display: flex;
     font-weight: 600;
+
     span:first-child {
       color: black;
     }
+
     span:last-child {
       color: #1b440c;
     }
@@ -190,17 +202,20 @@ header {
   @media (max-width: 768px) {
     display: none;
   }
+
   .items {
     width: 100%;
     display: flex;
     gap: 24px;
     align-items: center;
   }
+
   a {
     color: black;
     font-weight: 500;
     transition: 0.3s;
   }
+
   a:hover {
     color: #398c16;
   }
@@ -212,14 +227,18 @@ header {
   align-items: center;
   width: 40px;
   height: 40px;
+
   @media (max-width: 768px) {
     display: flex;
   }
+
   cursor: pointer;
+
   .my-button {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .btn-elem {
       position: relative;
       width: 22px;
@@ -227,6 +246,7 @@ header {
       height: 4px;
       background: #000;
     }
+
     .btn-elem::before {
       position: absolute;
       border-radius: 8px;
@@ -237,6 +257,7 @@ header {
       top: -11px;
       background: #000;
     }
+
     .btn-elem::after {
       position: absolute;
       border-radius: 8px;
@@ -253,15 +274,18 @@ header {
 .btn-elem.active {
   width: 30px !important;
 }
+
 .exit {
   display: none;
   justify-content: end;
   align-items: center;
   width: 100%;
   padding-right: 15px;
+
   @media (max-width: 768px) {
     display: flex;
   }
+
   .my-button {
     cursor: pointer;
     width: 40px;
@@ -269,6 +293,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .btn-elem {
       position: relative;
       width: 32px;
@@ -276,6 +301,7 @@ header {
       height: 3px;
       background: transparent;
     }
+
     .btn-elem::before {
       transform: rotate(45deg);
       position: absolute;
@@ -287,6 +313,7 @@ header {
       top: 0;
       background: #f7df65;
     }
+
     .btn-elem::after {
       transform: rotate(-45deg);
       position: absolute;
